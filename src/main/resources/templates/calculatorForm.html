@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+    Wpisz działanie!
+    <br>
+    <form action="/calculate"> <!--get domyślny inaczej method post-->
+        <input type="text" name="numbers">
+        <button>Oblicz</button> <!--domyślny do wysłania forma jak jest w formie-->
+    </form>
+    <hr>
+    Wynik działania!
+    <p th:text="${result}">
+
+    </p>
+    <hr>
+    Wyniki historyczne
+    <br>
+    <ul>
+        <li th:each="item : ${resultList}" th:text="${item}">
+        </li>
+    </ul>
+
+</body>
+</html>
